@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon</title>
+</head>
+<body>
+    <h2>Digimon</h2>
+    <section>
+        <%data.forEach(val=>{%>
+         <div>
+             <h3><%= val.name%></h3>
+             <img src="<%= val.img%>" alt="">
+             <h4><%= val.level%></h4>
+                 <button>Add to Faviourte</button>
+         </div>   
+         <form action="/" method="POST">
+            <input type="text" name="name" value="<%= val.name%>" placeholder="<%= val.name%>">
+            <input type="text" name="img" value="<%= val.img%>" placeholder="<%= val.img%>">
+            <input type="text" name="level" value="<%= val.level%>" placeholder="<%= val.level%>">
+            <button type ='submit'>save</button>
+        </form>
+         <%})%>         
+    </section>
+    
+</body>
+</html>
